@@ -1,0 +1,43 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go",
+        "mhutchie.git-graph",
+        "mutantdino.resourcemonitor",
+        "Compile-TomaszKasperczyk.copy-to-llm",
+        "donjayamanne.githistory",
+        "ryu1kn.partial-diff"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.foldingStrategy": "indentation",
+        "files.eol": "\n",
+        "[json]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "vscode.markdown-language-features"
+        },
+        "svelte.enable-ts-plugin": true,
+        "[go]": {
+          "editor.defaultFormatter": "golang.go"
+        },
+        "go.lintTool": "golangci-lint",
+        "go.lintFlags": [
+          "--fast"
+        ],
+        "go.testFlags": [
+          "-v"
+        ]
+      }
+    }
+  }
+}
