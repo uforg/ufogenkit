@@ -1,5 +1,7 @@
 # UFO Gen Kit
 
+<img src="./gopher.png" height="250px" width="auto">
+
 UFO Gen Kit is a simple and powerful code generation toolkit that provides a fluent interface for generating code in any programming language.
 
 It handles indentation and line breaks automatically, making it easy to generate clean and properly formatted code.
@@ -15,14 +17,23 @@ It handles indentation and line breaks automatically, making it easy to generate
 - Raw content insertion
 - Manual line breaks
 
+## Installation
+
+```bash
+go get github.com/uforg/ufogenkit
+```
+
 ## Usage
 
 ### Basic Example
 
 ```go
-g := genkit.NewGenKit()
-g.Line("function greet(name) {").
-    Indent().
+g := ufogenkit.NewGenKit()
+
+g.Line("function greet(name) {")
+
+// Functions can be optionally chained for fluent code generation
+g.Indent().
     Line("console.log('Hello, ' + name)").
     Dedent().
     Line("}")
@@ -42,10 +53,10 @@ function greet(name) {
 
 ```go
 // Use 4 spaces
-g := genkit.NewGenKit().WithSpaces(4)
+g := ufogenkit.NewGenKit().WithSpaces(4)
 
 // Use tabs
-g := genkit.NewGenKit().WithTabs()
+g := ufogenkit.NewGenKit().WithTabs()
 ```
 
 ### Block-based Generation
@@ -53,7 +64,7 @@ g := genkit.NewGenKit().WithTabs()
 With blocks, you can automatically manage indentation.
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Line("class User {")
 g.Block(func() {
     g.Line("constructor(name) {")
@@ -79,7 +90,7 @@ class User {
 
 ```go
 isAngry := true
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 
 g.Line("func saySomething() string {")
 g.Block(func() {
@@ -103,7 +114,7 @@ func saySomething() string {
 ### Formatted Lines
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Linef("const %s = %q", "greeting", "Hello, World!")
 ```
 
@@ -116,7 +127,7 @@ const greeting = "Hello, World!";
 ### Raw Content
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Raw("console.log('Hello, World!');")
 ```
 
@@ -129,7 +140,7 @@ console.log("Hello, World!");
 ### Manual Line Breaks
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Line("console.log('Hello')").Break().Line("console.log('World')")
 ```
 
@@ -144,7 +155,7 @@ console.log("World");
 ### Inline Content
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Inline("console.log('Hello')").Inline("console.log('World')")
 ```
 
@@ -157,7 +168,7 @@ console.log('Hello')console.log('World')
 ### Generating the Code
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Line("package main")
 
 result := g.String()
@@ -168,7 +179,7 @@ result := g.String()
 ### TypeScript Interface
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Line("interface User {").
     Indent().
     Line("id: string").
@@ -181,7 +192,7 @@ g.Line("interface User {").
 ### Python Class
 
 ```go
-g := genkit.NewGenKit().WithSpaces(4)
+g := ufogenkit.NewGenKit().WithSpaces(4)
 g.Line("class User:").
     Indent().
     Line("def __init__(self, name, age):").
@@ -199,7 +210,7 @@ g.Line("class User:").
 ### Go Struct
 
 ```go
-g := genkit.NewGenKit()
+g := ufogenkit.NewGenKit()
 g.Line("type User struct {").
     Indent().
     Line("ID   int").
