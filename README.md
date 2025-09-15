@@ -2,6 +2,29 @@
 
 <img src="./gopher.png" height="250px" width="auto">
 
+<br/>
+
+<p>
+  <a href="https://github.com/uforg/ufogenkit/actions">
+    <img src="https://github.com/uforg/ufogenkit/actions/workflows/ci.yaml/badge.svg" alt="CI status"/>
+  </a>
+  <a href="https://pkg.go.dev/github.com/uforg/ufogenkit">
+    <img src="https://pkg.go.dev/badge/github.com/uforg/ufogenkit" alt="Go Reference"/>
+  </a>
+  <a href="https://goreportcard.com/report/uforg/ufogenkit">
+    <img src="https://goreportcard.com/badge/uforg/ufogenkit" alt="Go Report Card"/>
+  </a>
+  <a href="https://github.com/uforg/ufogenkit/releases/latest">
+    <img src="https://img.shields.io/github/release/uforg/ufogenkit.svg" alt="Release Version"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/uforg/ufogenkit.svg" alt="License"/>
+  </a>
+  <a href="https://github.com/uforg/ufogenkit">
+    <img src="https://img.shields.io/github/stars/uforg/ufogenkit?style=flat&label=github+stars"/>
+  </a>
+</p>
+
 UFO Gen Kit is a simple and powerful code generation toolkit that provides a fluent interface for generating code in any programming language.
 
 It handles indentation and line breaks automatically, making it easy to generate clean and properly formatted code.
